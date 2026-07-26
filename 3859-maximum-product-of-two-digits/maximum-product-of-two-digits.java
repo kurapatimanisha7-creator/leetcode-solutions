@@ -1,20 +1,20 @@
 class Solution {
     public int maxProduct(int n) {
-        int firstmax=0;
-        int secoundmax=0;
+        int max1=0;
+        int max2=0;
         while(n>0){
-            int digit =n%10;
-            if(digit >=firstmax){
-                secoundmax=firstmax;
-                firstmax=digit;
-            }else if(digit>secoundmax){
-                secoundmax=digit;
+            int digit=n%10;
+            if(digit>max1){
+                max2=max1;
+                max1=digit;
+
+            }else if(digit>max2){
+                max2=digit;
             }
             n/=10;
-
-            }
+        }
+        return max1*max2;
         
-       return firstmax*secoundmax;
         
     }
 }
